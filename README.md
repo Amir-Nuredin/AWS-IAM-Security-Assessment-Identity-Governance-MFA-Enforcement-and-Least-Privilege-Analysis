@@ -1,1 +1,44 @@
-# AWS-IAM-Security-Assessment-Identity-Governance-MFA-Enforcement-and-Least-Privilege-Analysis
+# AWS IAM Security Assessment: RBAC, MFA, Least Privilege, and Access Governance Review
+
+## Objective
+
+This lab/project aims to develop foundational skills in Identity and Access Management (IAM), access governance, and cloud security auditing using AWS. In this lab, I explored AWS IAM by reviewing users, groups, authentication methods, and permission management practices. I created multiple IAM users representing different organizational roles and implemented Role-Based Access Control (RBAC) through the use of IAM groups. To strengthen account security, I configured Multi-Factor Authentication (MFA) for privileged accounts and evaluated the importance of authentication controls in protecting cloud environments. Additionally, I designed and analyzed both secure and insecure IAM policies to understand the principle of least privilege and the risks associated with excessive permissions. I created a custom read-only Amazon S3 policy for developers, then compared it against a deliberately over-permissive policy to identify potential privilege escalation and security risks. Finally, I conducted a formal IAM security assessment by reviewing user permissions, MFA compliance, administrative access, and policy configurations to identify governance issues and recommend security improvements. This project provided hands-on experience with AWS IAM, Role-Based Access Control (RBAC), Multi-Factor Authentication (MFA), least-privilege access management, identity governance, policy analysis, and cloud security auditing while demonstrating how security teams evaluate and secure access controls within AWS environments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
