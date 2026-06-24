@@ -52,7 +52,60 @@ IM5: Groups Section in IAM (none currently created)
 
 IM6: Policies Section in IAM
 
+### Part 2: User Creation
 
+Now that I confirmed everything, the first thing to do was to create the users for this project. I would be creating four users, an administator user (Admin-User this user wasn already created from a different project), a developer user for cloud development (developer-user), a security analyst user for monitoring and security (security-analyst), and lastly an auditor user for auditing and review (auditor user). to create these users, I went to IAM → Users → Create User and then configured each user. I named the user, allowed it access to the AWS Console, and created a custom password as well. I did the same for all three users (IM7-9). 
+
+<img width="803" height="284" alt="Screenshot 2026-06-22 100519" src="https://github.com/user-attachments/assets/7a4876b3-711f-4068-944f-661b96e3cf90" />
+<img width="799" height="278" alt="Screenshot 2026-06-22 100537" src="https://github.com/user-attachments/assets/8850379d-721a-4d90-9d8f-4965ba6a80e5" />
+<img width="793" height="276" alt="Screenshot 2026-06-22 100744" src="https://github.com/user-attachments/assets/c53b6abf-bdb1-4928-92d6-ef5092f51f86" />
+
+IM7-9: IAM User Accounts Created for Developer, Security Analyst, & Auditor
+
+### Part 3: Creating Groups and Assigning Users to Groups
+
+Now that I created the users, I wanted to assign them to different groups based on their roles. This is better than assigning permissions to each user individually because if you assign permissions to a specific group, you can then put that user in that group that matches the permissions that you want to give it. To do this, I went to IAM → User Groups → Create Group. 
+1. **ADMINISTRATORS GROUP.** First I wanted to create a group for the Administrators. This group would have anyone with Admin access. I created the group and added the "Admin-User" user to the group as well (IM10&11).
+2.  **DEVELOPERS GROUP.** Next I wanted to create a group for the Developers. This group would have any developers with different roles in it. I created the group and added the "developer-user" user to the group as well (IM12&13).
+3.   **SECURITYTEAM GROUP.** I then wanted to create a group for the Security Team. This group would have any Security Analyst or anyone with a security role. I created the group and added the "security-analyst" user to the group as well (IM14&15).
+4.    **AUDITORS GROUP.** Lastly I wanted to create a group for the Auditors. This group would any auditors in it. I created the group and added the "auditor-user" to the group as well (IM16&17).
+
+<img width="791" height="218" alt="Screenshot 2026-06-22 100919" src="https://github.com/user-attachments/assets/6c088f69-d599-44d3-9160-4982bca2b5d4" />
+<img width="807" height="242" alt="Screenshot 2026-06-22 100955" src="https://github.com/user-attachments/assets/f246db06-99b8-4980-b860-0732a023db31" />
+
+IM10&11: Creaing Administrators Group and Adding Admin-User
+
+<img width="797" height="283" alt="Screenshot 2026-06-22 101019" src="https://github.com/user-attachments/assets/0e85b653-e22d-4861-9b9c-2291848608a3" />
+<img width="802" height="244" alt="Screenshot 2026-06-22 101118" src="https://github.com/user-attachments/assets/37ec91bd-8773-4b4c-867a-84a117319548" />
+
+IM12&13: Creating Developer Group and Adding developer-user
+
+
+<img width="790" height="285" alt="Screenshot 2026-06-22 101216" src="https://github.com/user-attachments/assets/cabd8074-ef60-4657-a337-aa0120b7f7de" />
+<img width="799" height="234" alt="Screenshot 2026-06-22 101237" src="https://github.com/user-attachments/assets/8ac3b887-825f-412b-9a6d-b1ab78d8bac3" />
+
+IM14&15: Creating SecurityTeam Group and Adding security-analyst User
+
+<img width="796" height="278" alt="Screenshot 2026-06-22 101311" src="https://github.com/user-attachments/assets/d38874d0-d53b-41ee-8646-4c12a977f5df" />
+<img width="804" height="245" alt="Screenshot 2026-06-22 101424" src="https://github.com/user-attachments/assets/8dabf2d5-487e-4776-b1f7-6d58166af20d" />
+
+IM16&17: Creating Auditors Group and Adding auditor-user
+
+### Part 4: MFA Deployment for Privleged Users
+
+Next I wanted to configure MFA for users with higher levels of access, which were the "Admin-User" and "security-analyst." I already configured MFA access for the Admin-User in a previous project, so all I had to do was configure it for the security-analyst account. To do this, I went to the security-analyst user and then the "Security credentials" tab. I then went throught the MFA proccess and successfully configured MFA for the security-analyst account (IM18). To confirm that it was working, I logged in to the security-analyst account and it asked me for a MFA code. I typed it in (IM19), then I was able to login to the AWS console as the security-analyst account, confirming successfull deployment of MFA (IM20). 
+
+<img width="619" height="254" alt="image" src="https://github.com/user-attachments/assets/5551258f-e307-45c2-a044-472054dc76ec" />
+
+IM18: Assinging MFA to security-analyst account
+
+<img width="257" height="319" alt="Screenshot 2026-06-22 102246" src="https://github.com/user-attachments/assets/9093a834-294c-4aa9-b29b-94689fceb889" />
+
+IM19: MFA Code to Login to security-analyst Account 
+
+<img width="862" height="389" alt="Screenshot 2026-06-22 102331" src="https://github.com/user-attachments/assets/47fea029-b510-483a-ae63-c5b384ac6047" />
+
+IM20: AWS Console for security-analyst Account
 
 
 
