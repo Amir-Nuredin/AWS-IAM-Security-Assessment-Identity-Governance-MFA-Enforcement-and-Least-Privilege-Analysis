@@ -107,6 +107,46 @@ IM19: MFA Code to Login to security-analyst Account
 
 IM20: AWS Console for security-analyst Account
 
+### Part 5: Secure Policy Creation
+
+Now that the users and groups were all setup, I could now create specific policies for the groups so that they could only access and modify things that pertain to their specifc role. This is the concept of least privlege. 
+1. **CREATING POLICY.** The policy I created was for the Developer group. This policy would allow them to only view/read and download objects from S3 Buckets, but they wouldn't be able to modify or make any changes to those buckets (like deleting or adding buckets). This would only allow them what they need from these buckets and nothing more. To create it, I went to AWS Console → IAM → Policies → Create Policy. I wrote the policy in JSON format (IM21). In the policy was the line for either allow or deny (Allow), a couple lines for the service affected by the policy ("s3:GetObject," which allows reading of files in bucket and "s3:ListBucket" which allowed veiwing bucket contents ), and line for what resources within S3 would be affected ("Resource": "*" which means all). Normally in a real environment a policy would only affect specific buckets. I then named the policy "Developer-S3-Read-Policy." (IM22)
+2. **ATTACHING POLICY TO DEVELOPERS GROUP.** Now that I created the policy, I needed to to attach it to the correct group that that it would apply. To do this, I went to the developers group, and then under permissions, clicked "add permissions" then "Attach policies (IM23)." I then clicked the policy I created for the Developers group and attached it (IM24&25).
+3. **TESTING POLICY.** I wanted to see if the policy I made actually worked, so I logged on to the developer account and attempted to create a bucket. When I tried, it gave me a message saying I didn't have permission to do so, confirming that the policy was working as intended (IM26).
+
+<img width="805" height="248" alt="Screenshot 2026-06-22 183057" src="https://github.com/user-attachments/assets/53b820ac-aabd-49ca-ac92-dcd8fef8d21d" />
+
+IM21: Creating Custom Policy in JSON Format
+
+<img width="827" height="344" alt="Screenshot 2026-06-22 183150" src="https://github.com/user-attachments/assets/dbbbcfc5-4bb5-4a86-be9a-ea92654e09cb" />
+
+IM22: Configuring Custom Policy
+
+<img width="803" height="259" alt="image" src="https://github.com/user-attachments/assets/f6b94e72-dd6b-43df-99b1-72480e1a692e" />
+
+IM23: Attaching Policy to Developers Group
+
+<img width="814" height="167" alt="Screenshot 2026-06-22 183309" src="https://github.com/user-attachments/assets/d8ca5edc-52c8-4d0b-bc34-9f4a8f5706cf" />
+<img width="797" height="230" alt="Screenshot 2026-06-22 183359" src="https://github.com/user-attachments/assets/cd47efba-6b92-4f27-9687-7a6c5d8a7752" />
+
+IM24&25: Policy Attached to Developers Group
+
+<img width="812" height="96" alt="Screenshot 2026-06-25 103131" src="https://github.com/user-attachments/assets/af1663ba-bb08-4f83-9f0c-b789a4bbd311" />
+
+IM26: Confirming Policy is Working 
+
+### Part 6: Insecure Policy Creation
+
+Now that I created a policy that securly restrics roles, I wanted to create a policy that did the opposite, allow access for all users to have full control of AWS. This is very problematic because if the policy is applied, any standard user could change anything they want, or have maximum permissions. To create this policy, I went to AWS Console → IAM→ Policies → Create Policy. I did it in JSON format again (IM27). This policy is essentialy saying allow any action for any resource. This give essentaily full administrative access to AWS. I named it "Dangerous-FullAccess" and created the policy (IM28&29). 
+
+<img width="785" height="151" alt="Screenshot 2026-06-22 183631" src="https://github.com/user-attachments/assets/dc6ea8a3-8f6d-419a-a924-1fb0b098795b" />
+
+IM27: Creaing Insecure Policy in JSON format
+
+<img width="833" height="347" alt="Screenshot 2026-06-22 183718" src="https://github.com/user-attachments/assets/329d422b-8824-47e1-a481-86fb44231972" />
+<img width="786" height="222" alt="Screenshot 2026-06-22 184038" src="https://github.com/user-attachments/assets/9d3986b8-5298-4caa-a88a-10e2b7dab24d" />
+
+IM28&29: Insecure policy creating with full admin access. 
 
 
 
