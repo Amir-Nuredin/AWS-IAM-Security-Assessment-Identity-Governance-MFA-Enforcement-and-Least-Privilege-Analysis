@@ -148,6 +148,38 @@ IM27: Creaing Insecure Policy in JSON format
 
 IM28&29: Insecure policy creating with full admin access. 
 
+### Part 7: IAM Security Audit
+
+I now wanted to perform a security audit like a security analyst would too see how secure my "environemnt" was and what to improve on. I asked myself a couple of questions too see my current standing. 
+1. **REVIEWING ALL CURRENT USERS.** First I reviewed all the current users and what current group they were in as well as what permissions they had as well (IM30-33)
+2. **WHO HAS ADMINISTRATIVE STATUS?** The only current user that that administrative status was the Admin-User
+3. **WHO LACKS MFA?** Of the four users, two users did not have MFA, the developer-user and the auditor-user.
+4. **WHICH PERMISSIONS ARE EXCESSIVE?** I currently had two custom made permissions/policies. "Developer-S3-Read-Policy" which was not excessive and was a secure policy. The other policy "Dangerous-FullAccess" was not secure and very exccesive.
+5. **SHOULD ANY PERMISSIONS BE REMOVED?** The one permission that should be removed was the Dangerous-FullAccess policy. I went to that policy and then deleted it (IM34).
+
+After doing these audits and findings, I a small table listing these findings with three sections: Finding, Risk, and Severity (TB1)
+
+| Finding                     | Risk                 | Severity |
+| --------------------------- | -------------------- | -------- |
+| developer-user lacks MFA    | Account compromise   | High     |
+| auditor-user lacks MFA      | Account compromise   | High     |
+| Dangerous-FullAccess policy | Privilege escalation | Critical |
+| Wildcard permissions (*)    | Excessive access     | Critical |
+| Full administrative access  | Potential misuse (if associated with wrong account)    | High     |
+
+Table1: Findings Post-Security Audit
+
+<img width="796" height="272" alt="Screenshot 2026-06-22 184229" src="https://github.com/user-attachments/assets/dacc81a1-2f84-49ae-afa4-2fc84be86b45" />
+<img width="788" height="277" alt="Screenshot 2026-06-22 184255" src="https://github.com/user-attachments/assets/0892daf3-ec15-4571-a240-72175fd579dc" />
+<img width="792" height="271" alt="Screenshot 2026-06-22 184320" src="https://github.com/user-attachments/assets/a7c36c4c-b7e8-46e2-8a70-75471e45f882" />
+<img width="790" height="278" alt="Screenshot 2026-06-22 184458" src="https://github.com/user-attachments/assets/49a65a8d-ed27-4c4d-b79a-5752457807b9" />
+
+IM30-33: Current Configuration of all IAM Users
+
+<img width="802" height="205" alt="Screenshot 2026-06-22 184634" src="https://github.com/user-attachments/assets/6a93e34b-3faa-40e9-8a67-35e638f9bb91" />
+
+IM34: Deleting Dangerous-FullAccess Policy
+
 
 
 
