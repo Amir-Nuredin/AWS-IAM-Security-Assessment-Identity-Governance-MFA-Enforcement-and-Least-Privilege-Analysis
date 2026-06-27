@@ -186,8 +186,6 @@ Now that this lab was complete, I wrote a security assesment about my findings. 
 
 ## Conclusion
 
-## Conclusion
-
 This lab successfully demonstrated the foundational concepts of Identity and Access Management (IAM), access governance, and cloud security auditing using AWS IAM. Throughout the project, I configured and managed IAM users, groups, permissions, and Multi-Factor Authentication (MFA), gaining practical experience with implementing secure access controls and managing identities within an AWS environment.
 
 In addition to creating IAM users and groups, this project provided hands-on experience designing and evaluating IAM policies using JSON. I implemented a least-privilege policy that granted developers read-only access to Amazon S3 resources and compared it against a deliberately over-permissive policy to better understand the security risks associated with excessive permissions. This exercise reinforced the importance of Role-Based Access Control (RBAC), least-privilege principles, and proper permission management in protecting cloud environments.
