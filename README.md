@@ -180,6 +180,10 @@ IM30-33: Current Configuration of all IAM Users
 
 IM34: Deleting Dangerous-FullAccess Policy
 
+### Part 8: IAM Security Assessment Report
+
+Now that this lab was complete, I wrote a security assesment about my findings. 
+
 
 
 
