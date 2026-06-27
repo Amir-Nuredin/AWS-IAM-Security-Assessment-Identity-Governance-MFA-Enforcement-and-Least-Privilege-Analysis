@@ -182,7 +182,22 @@ IM34: Deleting Dangerous-FullAccess Policy
 
 ### Part 8: IAM Security Assessment Report
 
-Now that this lab was complete, I wrote a security assesment about my findings. 
+Now that this lab was complete, I wrote a security assesment about my findings. The full document can be found at the top of the write-up
+
+## Conclusion
+
+## Conclusion
+
+This lab successfully demonstrated the foundational concepts of Identity and Access Management (IAM), access governance, and cloud security auditing using AWS IAM. Throughout the project, I configured and managed IAM users, groups, permissions, and Multi-Factor Authentication (MFA), gaining practical experience with implementing secure access controls and managing identities within an AWS environment.
+
+In addition to creating IAM users and groups, this project provided hands-on experience designing and evaluating IAM policies using JSON. I implemented a least-privilege policy that granted developers read-only access to Amazon S3 resources and compared it against a deliberately over-permissive policy to better understand the security risks associated with excessive permissions. This exercise reinforced the importance of Role-Based Access Control (RBAC), least-privilege principles, and proper permission management in protecting cloud environments.
+
+The security assessment portion of the lab introduced important cloud security and identity governance concepts by reviewing user accounts, group memberships, MFA compliance, and policy configurations. Through a structured IAM security audit, I identified security risks, documented findings, evaluated administrative access, and developed recommendations to improve the organization's overall security posture. This demonstrated how cloud security teams assess access controls, identify governance issues, and reduce the risk of unauthorized access within AWS environments.
+
+Overall, this project strengthened my understanding of AWS Identity and Access Management, Role-Based Access Control (RBAC), Multi-Factor Authentication (MFA), least-privilege access control, identity governance, and cloud security auditing. It provided valuable experience implementing secure IAM configurations, evaluating permission models, and documenting security findings while demonstrating the critical role that identity and access management plays in securing modern cloud environments. The knowledge and practical skills gained from this lab establish a strong foundation for future projects involving cloud security engineering, identity governance, security compliance, cloud risk assessments, and AWS security operations.
+
+
+
 
 
 
